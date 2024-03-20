@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.3",
+    "express-session": "^1.18.0",
+    "firebase": "^10.9.0",
+    "firebase-admin": "^12.0.0",
+    "mongoose": "^8.2.2"
+  },
+  "name": "u-health-website",
+  "version": "1.0.0",
+  "description": "Our aim in this innovation is to improve the response time to medical emergencies through easy access for medical professionals and EMTs to be able to better and quickly assist patient.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "u-health",
+    "emergency"
+  ],
+  "author": "Khadeja Hamdy",
+  "license": "MIT"
+}
