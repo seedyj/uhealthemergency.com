@@ -301,7 +301,7 @@
 }
 
 .btn-primary:hover {
-    background-color: darken(var(--primary), 10%);
+    background-color: var(--primary);
 }
 
 /* Adjust button if not using Bootstrap */
@@ -317,7 +317,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: darken(var(--primary), 10%);
+    background-color: var(--primary);
 }
 
 
@@ -367,7 +367,7 @@ button[type="submit"]:hover {
 }
 
 .btn-primary:hover {
-    background-color: darken(var(--primary), 10%); /* Or your darker shade for primary color */
+    background-color: var(--primary); /* Or your darker shade for primary color */
 }
 
 .btn-secondary {
@@ -375,7 +375,7 @@ button[type="submit"]:hover {
 }
 
 .btn-secondary:hover {
-    background-color: darken(var(--secondary), 10%); /* Or your darker shade for secondary color */
+    background-color: var(--secondary); /* Or your darker shade for secondary color */
 }
 
 background-div {

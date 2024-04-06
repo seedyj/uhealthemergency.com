@@ -1,0 +1,37 @@
+/* Assuming the primary color of the website is a specific shade of blue */
+:root {
+    --primary-color: #4DC7A0; /* Blue shade */
+    --text-color: #333; /* Dark gray for text */
+    --background-color: #f8f9fa; /* Light gray background */
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #f8f9fa;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+}
+
+.form-label {
+    font-weight: bold;
+    color: var(--text-color);
+}

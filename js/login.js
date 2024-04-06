@@ -1,21 +1,25 @@
-document.querySelector('.login-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from submitting normally
+// Import only what is necessary
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from './firebase-config.js';  // Assuming firebase-config.js initializes Firebase and exports 'auth'
+
+document.querySelector('.login-form').addEventListener('submit', async function(event) {
+    event.preventDefault();  // Prevent the form from submitting normally
 
     // Capture user inputs
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
 
-    // Handle login with Firebase
-    firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            console.log("User signed in:", user.uid);
-            // Redirect user to their dashboard or update UI accordingly
-            window.location.href = 'dashboard.html'; // Change 'dashboard.html' to your dashboard page
-        })
-        .catch((error) => {
-            console.error("Error signing in:", error);
-            alert("Error signing in: " + error.message); // Display error message to the user
-        });
+    try {
+        // Use Firebase Authentication to sign in
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        // Signed in successfully
+
+        // Optionally, redirect to the user's dashboard or home page after login
+        console.log("Logged in successfully, User ID:", userCredential.user.uid);  // Using the user ID for logging
+        window.location.href = 'dashboard.html';  // Adjust this URL as needed
+    } catch (error) {
+        const errorMessage = error.message;
+        console.error("Error signing in:", errorMessage);
+        alert("Error: " + errorMessage);  // Display error message to the user
+    }
 });

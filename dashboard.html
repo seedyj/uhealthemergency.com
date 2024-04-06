@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid bg-primary text-white p-2">
+    <h1 class="text-center">U-HEALTH Dashboard</h1>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center mb-4">Welcome, User!</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Profile Information</h5>
+                    <p><strong>Email:</strong> <span id="user-email"></span></p>
+                    <p><strong>First Name:</strong> <span id="first-name-display"></span></p>
+                    <p><strong>Last Name:</strong> <span id="last-name-display"></span></p>
+                    <p><strong>Date of Birth:</strong> <span id="dob-display"></span></p>
+                    <p><strong>Blood Type:</strong> <span id="blood-type-display"></span></p>
+                    <p><strong>Height:</strong> <span id="height-display"></span> cm</p>
+                    <p><strong>Weight:</strong> <span id="weight-display"></span> kg</p>
+                    <p><strong>Medical History:</strong> <span id="medical-history-display"></span></p>
+                    <p><strong>Medical Allergies:</strong> <span id="medical-allergies-display"></span></p>
+                    <p><strong>Food Allergies:</strong> <span id="food-allergies-display"></span></p>
+                    <p><strong>Emergency Contact:</strong> <span id="emergency-contact-display"></span></p>
+                    <button class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Information</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for editing profile information -->
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editProfileModalLabel">Edit Profile Information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-profile-form">
+                    <!-- Repeat fields for editing, similar to the sign-up form -->
+                    <input type="text" id="edit-first-name" class="form-control mb-2" placeholder="First Name">
+                    <input type="text" id="edit-last-name" class="form-control mb-2" placeholder="Last Name">
+                    <input type="date" id="edit-dob" class="form-control mb-2" placeholder="Date of Birth">
+                    <input type="text" id="edit-blood-type" class="form-control mb-2" placeholder="Blood Type">
+                    <input type="number" id="edit-height" class="form-control mb-2" placeholder="Height (cm)">
+                    <input type="number" id="edit-weight" class="form-control mb-2" placeholder="Weight (kg)">
+                    <textarea id="edit-medical-history" class="form-control mb-2" placeholder="Medical History"></textarea>
+                    <input type="text" id="edit-medical-allergies" class="form-control mb-2" placeholder="Medical Allergies">
+                    <input type="text" id="edit-food-allergies" class="form-control mb-2" placeholder="Food Allergies">
+                    <input type="text" id="edit-emergency-contact" class="form-control mb-2" placeholder="Emergency Contact">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark text-white mt-4">
+    <div class="container-fluid py-3">
+        <div class="row">
+            <div class="col-12 col-md-6 text-center text-md-start">
+                &copy; 2024 by U-Health. All rights reserved.
+            </div>
+            <div class="col-12 col-md-6 text-center text-md-end">
+                Designed by: <a href="https://github.com/seedyjahateh" class="text-white">KHADIJA HAMDY</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+<script type="module" src="js/dashboard.js"></script>
+<script type="module" src="js/firebase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -32,48 +32,10 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-analytics.js"></script>
-    <!-- Add any other Firebase components you need, such as Firebase Auth or Firestore -->
 
 
 </head>
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid py-2 border-bottom d-none d-lg-block">
-        <div class="container">
-<!--            <div class="row">-->
-<!--                <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">-->
-<!--                    <div class="d-inline-flex align-items-center">-->
-<!--                        <a class="text-decoration-none text-body pe-3" href=""><i class="bi bi-telephone me-2"></i>+012 345 6789</a>-->
-<!--                        <span class="text-body">|</span>-->
-<!--                        <a class="text-decoration-none text-body px-3" href=""><i class="bi bi-envelope me-2"></i>info@example.com</a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-6 text-center text-lg-end">-->
-<!--                    <div class="d-inline-flex align-items-center">-->
-<!--                        <a class="text-body px-2" href="">-->
-<!--                            <i class="fab fa-facebook-f"></i>-->
-<!--                        </a>-->
-<!--                        <a class="text-body px-2" href="">-->
-<!--                            <i class="fab fa-twitter"></i>-->
-<!--                        </a>-->
-<!--                        <a class="text-body px-2" href="">-->
-<!--                            <i class="fab fa-linkedin-in"></i>-->
-<!--                        </a>-->
-<!--                        <a class="text-body px-2" href="">-->
-<!--                            <i class="fab fa-instagram"></i>-->
-<!--                        </a>-->
-<!--                        <a class="text-body ps-2" href="">-->
-<!--                            <i class="fab fa-youtube"></i>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-        </div>
-    </div>
-    <!-- Topbar End -->
-
 
     <!-- Navbar Start -->
     <div class="container-fluid sticky-top bg-white shadow-sm mb-5">
@@ -128,12 +90,20 @@
                 <input type="number" id="weight" name="weight">
             </div>
             <div class="form-group">
+                <label for="medical-history">Medical History:</label>
+                <textarea id="medical-history" name="medical-history" required placeholder="Describe your medical history"></textarea>
+            </div>
+            <div class="form-group">
                 <label for="medical_allergies">Medical Allergies:</label>
                 <input type="text" id="medical_allergies" name="medical_allergies">
             </div>
             <div class="form-group">
                 <label for="food_allergies">Food Allergies:</label>
                 <input type="text" id="food_allergies" name="food_allergies">
+            </div>
+            <div class="form-group">
+                <label for="emergency-contact">Emergency Contact:</label>
+                <input type="text" id="emergency-contact" name="emergency-contact" required placeholder="Enter an emergency contact number">
             </div>
             <div class="form-group">
                 <label for="username">Username:</label>
@@ -208,110 +178,20 @@
     <!-- Footer End -->
 
 
+    <!-- Template Javascript -->
+<!--    <script src="js/main.js"></script>-->
+    <script type="module" src="js/signup.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.js"></script>
+
+
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-analytics.js"></script>
-
-    <!-- Template Javascript -->
-<!--    <script src="js/main.js"></script>-->
-    <script src="js/signup.js"></script>
-     <!-- Add Firebase SDKs before your custom scripts -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
-    <!-- Add your other scripts that depend on Firebase below -->
-    <script src="u-health/index.js"></script> <!-- Your Firebase initialization -->
-    <!-- Add Firestore SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
-
+    <script src="js/dashboard.js"></script> <!-- Your custom JS for handling the dashboard -->
+    <script type="module" src="js/firebase-config.js"></script>
 </body>
-    <script type="module">
-	  // Import the functions you need from the SDKs you need
-	  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
-	  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
-	  // TODO: Add SDKs for Firebase products that you want to use
-	  // https://firebase.google.com/docs/web/setup#available-libraries
 
-	  // Your web app's Firebase configuration
-	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-	  const firebaseConfig = {
-	    apiKey: "AIzaSyB4Z71YW8OGtcsh-tiazaqYC7BS05pTxi4",
-	    authDomain: "shinerweb-auth.firebaseapp.com",
-	    projectId: "shinerweb-auth",
-	    storageBucket: "shinerweb-auth.appspot.com",
-	    messagingSenderId: "487776642853",
-	    appId: "1:487776642853:web:25b4821e77c6de7e90dccc",
-	    measurementId: "G-00FGRRF868"
-	  };
-
-	  // Initialize Firebase
-	  const app = initializeApp(firebaseConfig);
-	  const analytics = getAnalytics(app);
-	  const auth = getAuth();
-	  console.log(app);
-
-	  
-
-	  //----- New Registration code start	  
-	  document.getElementById("register").addEventListener("click", function() {
-		  var email =  document.getElementById("email").value;
-		  var password = document.getElementById("password").value;
-		  //For new registration
-		  createUserWithEmailAndPassword(auth, email, password)
-		  .then((userCredential) => {
-		    // Signed in 
-		    const user = userCredential.user;
-		    console.log(user);
-		    alert("Registration successfully!!");
-		    // ...
-		  })
-		  .catch((error) => {
-		    const errorCode = error.code;
-		    const errorMessage = error.message;
-		    // ..
-		    console.log(errorMessage);
-		    alert(error);
-		  });		  		  
-	  });
-	  //----- End
-
-	  //----- Login code start	  
-	  document.getElementById("login").addEventListener("click", function() {
-		  var email =  document.getElementById("login_email").value;
-		  var password = document.getElementById("login_password").value;
-
-		  signInWithEmailAndPassword(auth, email, password)
-		  .then((userCredential) => {
-		    // Signed in 
-		    const user = userCredential.user;
-		    console.log(user);
-		    alert(user.email+" Login successfully!!!");
-		    document.getElementById('logout').style.display = 'block';
-		    // ...
-		  })
-		  .catch((error) => {
-		    const errorCode = error.code;
-		    const errorMessage = error.message;
-		    console.log(errorMessage);
-		    alert(errorMessage);
-		  });		  		  
-	  });
-	  //----- End
-
-	  //----- Logout code start	  
-	  document.getElementById("logout").addEventListener("click", function() {
-		  signOut(auth).then(() => {
-			  // Sign-out successful.
-			  console.log('Sign-out successful.');
-			  alert('Sign-out successful.');
-			  document.getElementById('logout').style.display = 'none';
-			}).catch((error) => {
-			  // An error happened.
-			  console.log('An error happened.');
-			});		  		  
-	  });
-	  //----- End
-
-	</script>
 </html>
