@@ -29,6 +29,7 @@ document.querySelector('.signup-form').addEventListener('submit', async function
         emergencyContact: document.querySelector('#emergency-contact').value
     };
 
+<<<<<<< HEAD
     // Input validation
     if (!validateEmail(email)) {
         alert("Please enter a valid email address.");
@@ -53,4 +54,7 @@ document.querySelector('.signup-form').addEventListener('submit', async function
         console.error("Failed to create user:", error);
         alert("Failed to create user: " + error.message);
     }
+=======
+    
+>>>>>>> 90a77bfde79f3ed26a391af688cb89b6f75ffcee
 });

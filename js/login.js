@@ -9,6 +9,7 @@ document.querySelector('.login-form').addEventListener('submit', async function(
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
 
+<<<<<<< HEAD
     try {
         // Use Firebase Authentication to sign in
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -22,4 +23,7 @@ document.querySelector('.login-form').addEventListener('submit', async function(
         console.error("Error signing in:", errorMessage);
         alert("Error: " + errorMessage);  // Display error message to the user
     }
+=======
+
+>>>>>>> 90a77bfde79f3ed26a391af688cb89b6f75ffcee
 });

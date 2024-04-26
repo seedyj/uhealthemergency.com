@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Firebase configuration and initialization
 const firebaseConfig = {
     // ... your Firebase config object properties ...
@@ -8,6 +9,8 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 
+=======
+>>>>>>> 90a77bfde79f3ed26a391af688cb89b6f75ffcee
 // Below are the UI-related scripts for your website
 (function ($) {
     "use strict";
@@ -56,8 +59,13 @@ const db = firebase.firestore();
     // Basic validation for the signup form
     $(document).ready(function() {
         document.querySelector(".signup-form").addEventListener("submit", function(e) {
+<<<<<<< HEAD
             let password = document.getElementById("password").value;
             let agree = document.getElementById("agree").checked;
+=======
+            var password = document.getElementById("password").value;
+            var agree = document.getElementById("agree").checked;
+>>>>>>> 90a77bfde79f3ed26a391af688cb89b6f75ffcee
             // Example validation: ensure password length and consent checkbox
             if(password.length < 8 || !agree) {
                 e.preventDefault(); // Prevent form submission
