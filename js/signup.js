@@ -29,7 +29,6 @@ document.querySelector('.signup-form').addEventListener('submit', async function
         emergencyContact: document.querySelector('#emergency-contact').value
     };
 
-
     // Input validation
     if (!validateEmail(email)) {
         alert("Please enter a valid email address.");
@@ -46,6 +45,7 @@ document.querySelector('.signup-form').addEventListener('submit', async function
         const user = userCredential.user;
 
         // Save additional user info in Firestore using the service function
+        // Make sure addUser function in firebaseService.js matches this signature
         await addUser(user.uid, userData);
 
         console.log("User profile created!");
@@ -54,5 +54,4 @@ document.querySelector('.signup-form').addEventListener('submit', async function
         console.error("Failed to create user:", error);
         alert("Failed to create user: " + error.message);
     }
-
 });
